@@ -1,20 +1,18 @@
-let numberOfFilms,
-    filmLastSeen,
+let     filmLastSeen,
     filmLastSeenMark;
 
 
 let personalMovieDB = {
-    count: {},
+    count: 0,
     movies: {},
     actors: {},
     genres: [],
     private: false,
     start: function () {
-        numberOfFilms = +prompt('Сколько фильмов вы посмотрели?', '');
-        while (numberOfFilms == null || numberOfFilms == '' || isNaN(numberOfFilms)) {
-            numberOfFilms = +prompt('Сколько фильмов вы посмотрели?', '');
+        personalMovieDB.count = +prompt('Сколько фильмов вы посмотрели?', '');
+        while (personalMovieDB.count == null || personalMovieDB.count == '' || isNaN(personalMovieDB.count)) {
+            personalMovieDB.count = +prompt('Сколько фильмов вы посмотрели?', '');
         }
-        personalMovieDB.count = numberOfFilms;
     },
     rememberMyFilms: function () {
         for (let i = 1; i <= personalMovieDB.count; i++) {
